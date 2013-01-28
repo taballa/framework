@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "hash": "97d7e44ea76e621ecaa162a3d93ada98",
     "packages": [
         {
@@ -353,6 +354,11 @@
             ]
         },
         {
+=======
+    "hash": "27f8582c9310c9d8e8cb24929f21a856",
+    "packages": [
+        {
+>>>>>>> 18d966bc2ca224f974ed62f946fcd9b23ab3ffcb
             "name": "symfony/class-loader",
             "version": "v2.1.7",
             "target-dir": "Symfony/Component/ClassLoader",
@@ -396,6 +402,7 @@
             ],
             "description": "Symfony ClassLoader Component",
             "homepage": "http://symfony.com"
+<<<<<<< HEAD
         },
         {
             "name": "symfony/yaml",
@@ -438,6 +445,8 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "http://symfony.com"
+=======
+>>>>>>> 18d966bc2ca224f974ed62f946fcd9b23ab3ffcb
         }
     ],
     "packages-dev": null,

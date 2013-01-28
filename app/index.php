@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 // framework/app/index.php
 include_once '../vendor/autoload.php';
 
@@ -11,3 +12,9 @@ printf('Hello %s', htmlspecialchars($input, ENT_QUOTES, 'UTF-8'));
 
 
 
+=======
+ 
+$input = $_GET['name'];
+ 
+printf('Hello %s', $_GET['name']);
+>>>>>>> 18d966bc2ca224f974ed62f946fcd9b23ab3ffcb
