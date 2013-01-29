@@ -1,10 +1,6 @@
 {
     "require": {
-<<<<<<< HEAD
         "symfony/class-loader": "2.1.*",
-        "phpunit/phpunit": "3.7.*"
-=======
-        "symfony/class-loader": "2.1.*"
->>>>>>> 18d966bc2ca224f974ed62f946fcd9b23ab3ffcb
+        "symfony/http-foundation": "2.1.*"
     }
 }
