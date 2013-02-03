@@ -1,28 +1,26 @@
 <?php 
 define('ROOT', '../');
-define('APP', ROOT . 'app/');
 
 require ROOT . 'vendor/autoload.php';
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing;
 
 $request = Request::createFromGlobals();
+$routes = include ROOT.'app/app.php';
 
-$map = array(
-    '/hello' => APP.'hello.php',
-    '/bye' => APP.'bye.php',
-);
+$context = new Routing\RequestContext;
+$context->fromRequest($request);
+$matcher = new Routing\Matcher\UrlMatcher($routes, $context);
 
-$path = $request->getPathInfo();
-if (isset($map[$path])){
-    ob_start();
-    extract($request->query->all(), EXTR_SKIP);
-    include $map[$path];
-    $response = new Response(ob_end_clean());
-    // $response = new Response();
-}else{
+try {
+    $request->attributes->add($matcher->match($request->getPathInfo()));
+    $response = call_user_func($request->attributes->get('_controller'), $request);
+} catch (Routing\Exception\ResourceNotFoundException $e) {
     $response = new Response('Not Found', 404);
+} catch (Exception $e) {
+    $response = new Response('An error occurred', 500);
 }
 
 $response->send();
