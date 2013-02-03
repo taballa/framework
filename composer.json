@@ -5,5 +5,8 @@
         , "twig/twig": "1.*"
         , "symfony/routing": "2.1.*"
         , "symfony/http-kernel": "2.1.*"
+    },
+    "autoload": {
+        "psr-0": { "Simplex": "src/", "Calendar": "src/" }
     }
 }
